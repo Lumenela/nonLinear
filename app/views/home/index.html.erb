@@ -1,52 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	    <title>NonLinear</title>
-
-    <!-- Le styles -->
-    <%= stylesheet_link_tag "/bootstrap/css/bootstrap.css"%>
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-    </style>
-    <%= stylesheet_link_tag "/bootstrap/css/bootstrap-responsive.css"%>
   </head>
 
-  <body>
-
-    <div class="navbar  navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/home/index.html#">nonLinear</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="/home/index.html#">Главная</a></li>
-              <li><a href="#">Вычисления</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Теоретическая справка <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Метод простых интераций</a></li>
-                  <li><a href="#">Метод секущих</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Об авторе</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+  <body>   
 
     <div class="container">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit"  id="main-hero-unit"n>
+      <div class="hero-unit"  id="main-hero-unit">
         <p><a class="btn btn-primary btn-large">Learn more »</a></p>
       </div>
 
@@ -75,11 +37,7 @@
         <p>© Lumenela 2012</p>
       </footer>
 
-    </div> <!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    </div>
     <%= javascript_include_tag "/bootstrap/js/jquery.js" %>
     <%= javascript_include_tag "/bootstrap/js/bootstrap.js" %>
     <%= javascript_include_tag "/bootstrap/js/bootstrap-alert.js" %>

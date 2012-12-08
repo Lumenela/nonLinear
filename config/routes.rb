@@ -1,7 +1,16 @@
 NonLinear::Application.routes.draw do
+  get "non_linear/help"
+
+  get "non_linear/solve"
+
+  post "non_linear/solve"
+
   get "home/about"
 
   get "home/index"
+  
+  post "non_linear/solveEquation"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
