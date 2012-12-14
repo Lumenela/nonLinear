@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<%= javascript_include_tag "/solver.js.rjs" %>
+		<%= javascript_include_tag "/assets/solver.js" %>
+		<%= javascript_include_tag "/assets/jquery-simulate.js" %>
+		<%= javascript_include_tag "/assets/regex-mask-plugin.js" %>
+
 	</head>
 
   <body>
@@ -10,31 +13,71 @@
 
       <div class="hero-unit"  id="main-hero-unit" class="myText">
 		<div>
-			<form id="solve_form" data-remote="true" action='/non_linear/solveEquation' >
-			<p>Введите уравнение, решение которого хотите получить.</p>
-			<textarea type="text" id="equation_field"></textarea>
-			<button class="btn btn-primary" id="solve_button" type='button'>Решить »</button>
+			<form id="solve_form" data-remote="true" action='/non_linear/solveEquation'>
+				<p>Введите уравнение, решение которого хотите получить.</p>
+				<textarea type="text" id="equation_field"></textarea>
+				
 
-			<div class="additional_info">
-				<label>Выберите метод решения</label>
-				<div class="btn-group">
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id='first_variant'>
-					Метод бисекции
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li ><a href="#" id='second_variant'>Метод секущих</a></li>
-					</ul>
+				<div id="method">
+					<label>Выберите метод решения</label>
+					<div class="btn-group">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id='first_variant'>
+						Метод бисекции
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li ><a href="#" id='second_variant'>Метод секущих</a></li>
+						</ul>
+					</div>
 				</div>
-			</div>
+				<a href="#" class="btn" id="clear_button">Очистить</a>
+
+				<div class="accordion" id="accordion2">
+
+					<div class="accordion-group border"  id="help">
+						<div class="accordion-heading">
+	                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+	                            Формат ввода уравнения
+	                        </a>
+                    	</div>
+	                    <div id="collapseOne" class="accordion-body collapse in">
+	                        <div class="accordion-inner inner-border">
+	                            Справка
+	                        </div>
+	                    </div>
+					</div>
+
+					<div class="accordion-group">
+						<div class="accordion-heading accordion-inner" id="interval" data-parent="#accordion2">
+							 <!--div -->
+								<label>Введите интервал, на котором локализован корень уравения.</label>
+								<input type="text" id="interval_input"></input>
+								<a  id="interval_help" href="#" class=" icon icon-question-sign" rel="popover" data-content="Введите интервал в формате [a,b]. Например: [0.1, 10]." data-original-title="Подсказка"></a>
+								<label class="error">Неправильный формат.</label>
+							<!--/div-->
+                    	</div>
+					</div>
+
+					<div class="accordion-group" id="solution_div">
+						<div class="accordion-heading">
+							 <div class="accordion-inner" data-parent="#accordion2">
+								<label id="solution"></label>
+							</div>
+                    	</div>
+					</div>
+
+	                <div class="accordion-group">
+	                	<button class="btn btn-primary btn-large" id="solve_button" type='button'>Решить »</button>	                    
+	                </div>
+				</div>
+
+			</form>
+			
 		</div>
 
 
 
-		<div id="solution" >
-
-		</div>
-
+		
       </div>
 
       <hr>
@@ -44,8 +87,6 @@
       </footer>
 
     </div> <!-- /container -->
-
-  
-
+</script>
 </body>
 </html>

@@ -3,11 +3,25 @@
 <head>
   	<title>NonLinear</title>
 	<%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "/assets/bootstrap/css/bootstrap.css"%>
+  <%= stylesheet_link_tag "/assets/bootstrap/css/bootstrap-responsive.css"%>
 	<%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap.js" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-alert.js" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-modal.js" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-dropdown.js" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-scrollspy.js" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-tab.js" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-tooltip.js" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-popover.js" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-button.js" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-collapse.js" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-carousel.js" %>
+  <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-typeahead.js" %>
 	<%= csrf_meta_tags %>
 
-	<%= stylesheet_link_tag "/bootstrap/css/bootstrap.css"%>
-	<%= stylesheet_link_tag "/bootstrap/css/bootstrap-responsive.css"%>
+	
+  
 	<style type="text/css">
 	  body {
 	    padding-top: 60px;
@@ -40,4 +54,7 @@
 <%= yield %>
 
 </body>
+
+
+
 </html>
