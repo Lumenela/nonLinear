@@ -48,7 +48,14 @@ $(document).ready(function(){
 				url: '/non_linear/solveEquation',
 				data: str,
 				success: function(data){
-	            $('#solution_div').show();
+				if(data.result=="success"){
+					$('#solution_div').removeClass("alert-success").removeClass("alert-error");
+					$('#solution_div').addClass("alert-"+data.result).show();
+				}else{
+					$('#solution_div').removeClass("alert-error").removeClass("alert-error");
+					$('#solution_div').addClass("alert-"+data.result).show();
+				}	
+	            
 	            console.log(data.solution);
 	            $('#solution').text(data.solution);
 	        },

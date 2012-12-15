@@ -4,19 +4,15 @@ class NonLinearController < ApplicationController
   end
 
   def solveEquation
-    regexp=Regexp.new('(x|sin|cos|tan|log10|log|asin|acos|atan|sinh|cosh|tanh|cth|asinh|acosh|atanh|PI|exp|sqrt)+')
-    parse=params[:input].gsub!(regexp,'')
-    if parse.eql?(nil)
-      validate=0
-    else
-      validate = parse.scan(/[a-zA-Z]+/).size
-    end
+    equation=String.new(params[:input].to_str)
+    validate=validateInput(params[:input])
     if validate.eql?(0)
-      output = {'result'=>'successful','solution' => eval(params[:input]).inspect}.to_json
+      input=String.new(mathConcat(equation))
+      puts input
+      output = {'result'=>'success','solution' => eval(input).inspect}.to_json
       render :json => output
     else
-        output = {'result'=>'failed','solution' => 'error, we are input not valid equation'}.to_json
-        output = {'foo' => 'bar'}.to_json
+        output = {'result'=>'error','solution' => 'error, we are input not valid equation'}.to_json
         render :json => output
     end
     
@@ -29,4 +25,24 @@ class NonLinearController < ApplicationController
 		return "fail"
   	
   end
+
+  def validateInput(input)
+    regexp=Regexp.new('((x|PI|exp|sin|cos|tan|log10|log|asin|acos|atan|sinh|cosh|tanh|cth|asinh|acosh|atanh)(?=\())+')
+    parse=input.gsub!(regexp,'')
+    if parse.eql?(nil)
+      parse=input
+    end
+    return parse.scan(/[a-zA-Z]+/).size
+  end
+  
+  def mathConcat(input)
+    regexp=Regexp.new('((sin|cos|tan|log10|log|asin|acos|atan|sinh|cosh|tanh|cth|asinh|acosh|atanh)(?=\())+')
+    matcher=input.scan(regexp)
+    parse=String.new("")
+    matcher.each do|n|
+      parse=input.gsub!(n[0],'Math.'+n[0])
+    end
+    return parse
+  end  
+
 end
