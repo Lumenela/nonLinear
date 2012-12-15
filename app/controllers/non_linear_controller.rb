@@ -12,9 +12,12 @@ class NonLinearController < ApplicationController
       validate = parse.scan(/[a-zA-Z]+/).size
     end
     if validate.eql?(0)
-      render :text =>eval(params[:input]).inspect
-      else
-        render :text =>"error, we are input not valid equation"
+      output = {'result'=>'successful','solution' => eval(params[:input]).inspect}.to_json
+      render :json => output
+    else
+        output = {'result'=>'failed','solution' => 'error, we are input not valid equation'}.to_json
+        output = {'foo' => 'bar'}.to_json
+        render :json => output
     end
     
   end

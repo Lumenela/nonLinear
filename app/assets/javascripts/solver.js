@@ -48,10 +48,9 @@ $(document).ready(function(){
 				url: '/non_linear/solveEquation',
 				data: str,
 				success: function(data){
-				$('#solution').text("");
-	            console.log(data);
 	            $('#solution_div').show();
-	            $('#solution').text(data);
+	            console.log(data.solution);
+	            $('#solution').text(data.solution);
 	        },
 	        error: function(XMLHttpRequest, textStatus, errorThrown){
 	            console.log(XMLHttpRequest.readyState);
@@ -74,4 +73,3 @@ $(document).ready(function(){
 		var value=$('textarea').val();
 	}
 })
-
