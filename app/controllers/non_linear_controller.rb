@@ -4,7 +4,7 @@ class NonLinearController < ApplicationController
   end
 
   def solveEquation
-    regexp=Regexp.new('(x|sin|cos|tan|log10|log|asin|acos|atan|sinh|cosh|tanh|cth|asinh|acosh|atanh|PI|exp|sqrt)+')
+    regexp=Regexp.new(/(x|sin|cos|tan|log10|log|asin|acos|atan|sinh|cosh|tanh|cth|asinh|acosh|atanh|PI|exp|sqrt)+/)
     parse=params[:input].gsub!(regexp,'')
     if parse.eql?(nil)
       validate=0
