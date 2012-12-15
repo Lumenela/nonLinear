@@ -15,7 +15,6 @@
 
 #solve_form{
 	position: relative;
-	height: 300px;
 }
 
 #method{
@@ -24,7 +23,7 @@
 }
 
 #interval{
-	width: 700px;
+	width: 750px;
 	height: 30px;
 
 	label{
@@ -80,4 +79,7 @@
 
 #help{
 	width: 514px;
+}
+#solution_div{
+	margin-bottom:20px;
 }

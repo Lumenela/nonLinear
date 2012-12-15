@@ -7,8 +7,6 @@ $(document).ready(function(){
 
 	$('#collapseOne').collapse("hide");
 
-
-
 	$('#clear_button').click(function(){
 		$('#equation_field').val("");
 		$('#interval_input').val("");
@@ -24,13 +22,14 @@ $(document).ready(function(){
 		{
 			console.log('success');
 			$('#interval label.error').hide();
+			$('#interval').removeClass('error');
 		}
 		else{
 			$('#interval label.error').show();
+			$('#interval').addClass('error');
 		}
 
 	})
-
 	$('#solve_button').click(function(){
 		console.log($('#equation_field').val());
 		if($('#equation_field').val().length == 0 ){
@@ -41,24 +40,27 @@ $(document).ready(function(){
 			$('#interval_input').focus();
 			return;
 		}
-		var str = {input: $('#equation_field').val() };
-		 $.ajax({
-			type:'POST',
-			dataType: 'json',
-			url: '/non_linear/solveEquation',
-			data: str,
-			success: function(data){
-            console.log(data);
-            $('#solution_div').show();
-            $('#solution').text(data);
-        },
-        error: function(XMLHttpRequest, textStatus, errorThrown){
-            console.log(XMLHttpRequest.readyState);
-            console.log(XMLHttpRequest.status);
-            console.log(textStatus);
-            console.log(errorThrown);
-        }
-		})
+		if($('#interval label.error').css('display')=='none'){
+			var str = {input: $('#equation_field').val() };
+			$.ajax({
+				type:'POST',
+				dataType: 'json',
+				url: '/non_linear/solveEquation',
+				data: str,
+				success: function(data){
+				$('#solution').text("");
+	            console.log(data);
+	            $('#solution_div').show();
+	            $('#solution').text(data);
+	        },
+	        error: function(XMLHttpRequest, textStatus, errorThrown){
+	            console.log(XMLHttpRequest.readyState);
+	            console.log(XMLHttpRequest.status);
+	            console.log(textStatus);
+	            console.log(errorThrown);
+	        }
+			})
+		}
 	})
 
 	$('#second_variant').click(function(){
@@ -67,6 +69,9 @@ $(document).ready(function(){
 			$(this).text(first);
 			$('#first_variant').text(second);
 			$('#first_variant').append('<span class="caret"></span>');
-		})
+		});
+	function validate(){
+		var value=$('textarea').val();
+	}
 })
 
