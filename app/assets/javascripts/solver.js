@@ -17,10 +17,10 @@ $(document).ready(function(){
 
 	$('#interval_input').focusout(function(){
 		var re = new RegExp(/\[( *)?-?\d+(\.\d+)?( *)?,( *)?-?\d+(\.\d+)?( *)?\]+/);
-		console.log($(this).val());
-		if($(this).val().match(re))
+		var lower_border_input = $('#interval_input').val().match(/-?\d+(\.\d+)?/g)[0];
+		var upper_border_input = $('#interval_input').val().match(/-?\d+(\.\d+)?/g)[1];
+		if($(this).val().match(re) && lower_border_input < upper_border_input)
 		{
-			console.log('success');
 			$('#interval label.error').hide();
 			$('#interval').removeClass('error');
 		}
@@ -41,7 +41,15 @@ $(document).ready(function(){
 			return;
 		}
 		if($('#interval label.error').css('display')=='none'){
-			var str = {input: $('#equation_field').val() };
+			var eq =$('#equation_field').val();
+			var matches = eq.match(/\d+(\.\d*)?/g)
+			var use_method = "bisection";
+			var lower_border_input = $('#interval_input').val().match(/-?\d+(\.\d+)?/g)[0];
+			var upper_border_input = $('#interval_input').val().match(/-?\d+(\.\d+)?/g)[1];
+
+			if($('#first_variant').text()=="Метод секущих")
+				use_method = "secant";
+			var str = {input: eq, method:use_method, lower_bound:lower_border_input, upper_bound:upper_border_input };
 			$.ajax({
 				type:'POST',
 				dataType: 'json',
