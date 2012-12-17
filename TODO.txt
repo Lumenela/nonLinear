@@ -1,0 +1,5 @@
+TODO: fix int truncation by default
+TODO: check wrong values for root location but valid in terms of syntax
+TODO: write guide
+TODO: fix :active on menu bar
+TODO: make highlight of solution blue
