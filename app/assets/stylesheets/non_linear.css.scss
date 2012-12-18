@@ -52,7 +52,7 @@
 }
 
 #clear_button{
-	margin-left: -173px;
+	margin-left: -320px;
 	margin-top: 78px;
 }
 #solve_div{
@@ -77,9 +77,242 @@
 	border-top: 1px solid #E5E5E5;
 }
 
-#help{
+#helpText{
 	width: 514px;
 }
 #solution_div{
 	margin-bottom:20px;
+}
+
+.accordion-inner{
+	font-size: 14px;
+}
+
+.form-container{
+	background: rgba(255,255,255,0.5);
+	padding: 5px;
+	webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+#mask{
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    display:none;
+	background: -moz-linear-gradient(-45deg,  rgba(109,179,242,0.5) 0%, rgba(84,163,238,0.66) 39%, rgba(54,144,240,0.71) 51%, rgba(30,105,222,0.9) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(109,179,242,0.5)), color-stop(39%,rgba(84,163,238,0.66)), color-stop(51%,rgba(54,144,240,0.71)), color-stop(100%,rgba(30,105,222,0.9))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(109,179,242,0.5) 0%,rgba(84,163,238,0.66) 39%,rgba(54,144,240,0.71) 51%,rgba(30,105,222,0.9) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(109,179,242,0.5) 0%,rgba(84,163,238,0.66) 39%,rgba(54,144,240,0.71) 51%,rgba(30,105,222,0.9) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(109,179,242,0.5) 0%,rgba(84,163,238,0.66) 39%,rgba(54,144,240,0.71) 51%,rgba(30,105,222,0.9) 100%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(109,179,242,0.5) 0%,rgba(84,163,238,0.66) 39%,rgba(54,144,240,0.71) 51%,rgba(30,105,222,0.9) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#806db3f2', endColorstr='#e61e69de',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    z-index: 99900;
+
+
+
+}
+.infobox h5{
+	margin-bottom:10px;
+	width: 1071px;
+	margin-left: -1.5%;
+	line-height: 25px;
+	font-size: 18px;
+
+	position:relative;
+	color:#fff;
+	padding:10px 0;
+	left:0;
+	z-index:100;
+	-webkit-box-shadow:0 0 3px rgba(0,0,0,0.55);
+	-moz-box-shadow:0 0 3px rgba(0,0,0,0.55);
+	box-shadow:0 0 3px rgba(0,0,0,0.55);
+	background:#3198dd;
+	background:-webkit-gradient(linear, left top, left bottom, from(#33acfc), to(#3198dd));
+	background:-moz-linear-gradient(top,#33acfc,#3198dd);
+	text-align:center;
+	text-shadow:#2187c8 0 -1px 1px;
+	font-weight:bold;
+}
+/* left shadow */
+.infobox:before {
+	content:"\00a0";
+	display:block; /* reduce the damage in FF3.0 */
+	position:absolute;
+	top: 45px;/* value = - border-top-width - border-bottom-width */
+	left: -16px;/* controls horizontal position */ 
+	width:0;
+	height:0;
+	border-width:10px 0 10px 10px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#2083c2 transparent transparent; 
+	z-index:0;
+}
+/* right shadow */
+.infobox:after {
+	content:"\00a0";
+	display:block; /* reduce the damage in FF3.0 */
+	position:absolute;
+	top:45px; /* value = - border-top-width - border-bottom-width */
+	right:-15px; /* controls horizontal position */
+	width:0;
+	height:0;
+	border-width:10px 10px 10px 0; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#2083c2 transparent transparent; 
+	z-index:0;
+}
+
+#circularG {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        z-index: 99999;
+    }
+    .content-container{
+        min-width: 1200px;
+    }
+
+    .circularG {
+        position: absolute;
+        background-color: #000000;
+        width: 14px;
+        height: 14px;
+        -webkit-border-radius: 9px;
+        -moz-border-radius: 9px;
+        -webkit-animation-name: bounce_circularG;
+        -webkit-animation-duration: 0.32s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: linear;
+        -moz-animation-name: bounce_circularG;
+        -moz-animation-duration: 0.32s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-direction: linear;
+        border-radius: 9px;
+        -o-animation-name: bounce_circularG;
+        -o-animation-duration: 0.32s;
+        -o-animation-iteration-count: infinite;
+        -o-animation-direction: linear;
+        -ms-animation-name: bounce_circularG;
+        -ms-animation-duration: 0.32s;
+        -ms-animation-iteration-count: infinite;
+        -ms-animation-direction: linear;
+    }
+
+    #circularG_1 {
+        left: 0;
+        top: 24px;
+        -webkit-animation-delay: 0.4s;
+        -moz-animation-delay: 0.4s;
+        -o-animation-delay: 0.4s;
+        -ms-animation-delay: 0.4s;
+    }
+
+    #circularG_2 {
+        left: 6px;
+        top: 6px;
+        -webkit-animation-delay: 0.36s;
+        -moz-animation-delay: 0.36s;
+        -o-animation-delay: 0.36s;
+        -ms-animation-delay: 0.36s;
+    }
+
+    #circularG_3 {
+        top: 0;
+        left: 24px;
+        -webkit-animation-delay: 0.32s;
+        -moz-animation-delay: 0.32s;
+        -o-animation-delay: 0.32s;
+        -ms-animation-delay: 0.32s;
+    }
+
+    #circularG_4 {
+        right: 6px;
+        top: 6px;
+        -webkit-animation-delay: 0.28s;
+        -moz-animation-delay: 0.28s;
+        -o-animation-delay: 0.28s;
+        -ms-animation-delay: 0.28s;
+    }
+
+    #circularG_5 {
+        right: 0;
+        top: 24px;
+        -webkit-animation-delay: 0.24s;
+        -moz-animation-delay: 0.24s;
+        -o-animation-delay: 0.24s;
+        -ms-animation-delay: 0.24s;
+    }
+
+    #circularG_6 {
+        right: 6px;
+        bottom: 6px;
+        -webkit-animation-delay: 0.2s;
+        -moz-animation-delay: 0.2s;
+        -o-animation-delay: 0.2s;
+        -ms-animation-delay: 0.2s;
+    }
+
+    #circularG_7 {
+        left: 24px;
+        bottom: 0;
+        -webkit-animation-delay: 0.16s;
+        -moz-animation-delay: 0.16s;
+        -o-animation-delay: 0.16s;
+        -ms-animation-delay: 0.16s;
+    }
+
+    #circularG_8 {
+        left: 6px;
+        bottom: 6px;
+        -webkit-animation-delay: 0.12s;
+        -moz-animation-delay: 0.12s;
+        -o-animation-delay: 0.12s;
+        -ms-animation-delay: 0.12s;
+    }
+
+    @-webkit-keyframes bounce_circularG{
+	0%{
+	-webkit-transform:scale(1)}
+
+	100%{
+	-webkit-transform:scale(.3)}
+
+	}
+
+    @-moz-keyframes bounce_circularG{
+	0%{
+	-moz-transform:scale(1)}
+
+	100%{
+	-moz-transform:scale(.3)}
+
+	}
+
+    @-o-keyframes bounce_circularG{
+	0%{
+	-o-transform:scale(1)}
+
+	100%{
+	-o-transform:scale(.3)}
+
+	}
+
+    @-ms-keyframes bounce_circularG{
+	0%{
+	-ms-transform:scale(1)}
+
+	100%{
+	-ms-transform:scale(.3)}
+
+	}
+
+#loading{
+	left: 45%;
+	bottom: 40%;
+	position: absolute;
 }

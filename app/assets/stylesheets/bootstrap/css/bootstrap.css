@@ -5843,7 +5843,7 @@ a.badge:hover {
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
-  min-width: 600px;
+  width: 1050px;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;

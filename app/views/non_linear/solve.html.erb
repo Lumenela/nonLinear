@@ -8,38 +8,48 @@
 	</head>
 
   <body>
-
+  	<div id="mask"></div>
     <div class="container">
 
       <div class="hero-unit"  id="main-hero-unit" class="myText">
-		<div>
+		<div class="form-container">
 			<form id="solve_form" data-remote="true" action='/non_linear/solveEquation'>
-				<p>Введите уравнение, решение которого хотите получить.</p>
+				<div class="infobox"><h5>Nonlinear equation you want to solve. Note that complex roots won't be found.
+					f(x)=0. You only need to type f(x)!</h5></div>
 				<textarea type="text" id="equation_field"></textarea>
 				
 
 				<div id="method">
-					<label>Выберите метод решения</label>
+					<label>Choose the method that will be used for calculation</label>
 					<div class="btn-group">
-						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id='first_variant'>Метод бисекции<span class="caret"></span></a>
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id='first_variant'>Bisection Method<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li ><a href="#" id='second_variant'>Метод секущих</a></li>
+							<li ><a href="#" id='second_variant'>Secant Line Method</a></li>
 						</ul>
 					</div>
 				</div>
-				<a href="#" class="btn" id="clear_button">Очистить</a>
+				<a href="#" class="btn" id="clear_button">Clear</a>
 
 				<div class="accordion" id="accordion2">
 
-					<div class="accordion-group border"  id="help">
+					<div class="accordion-group border"  id="helpText">
 						<div class="accordion-heading">
 	                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-	                            Формат ввода уравнения
+	                        	Equation Format
 	                        </a>
                     	</div>
 	                    <div id="collapseOne" class="accordion-body collapse in">
 	                        <div class="accordion-inner inner-border">
-	                            Справка
+	                            <p>x is the variable your equation will be solved for.
+	                            In the equation you can use only the following expressions:
+	                            + - * ^ \ for addition, subtraction, multiplication, division and powering respectivly
+	                            Goniometric functions:
+	                            sin,cos,tan,asin,acos,atan,sinh,cosh,tanh,cth,asinh,acosh,atanh.
+	                            Other functions:
+	                            log10,log,exp.
+	                            Constants:
+	                            PI - for pi
+	                            exp(1) for e</p>
 	                        </div>
 	                    </div>
 					</div>
@@ -47,10 +57,10 @@
 					<div class="accordion-group">
 						<div class="accordion-heading accordion-inner control-group" id="interval" data-parent="#accordion2">
 							 <!--div -->
-								<label>Введите интервал, на котором локализован корень уравения.</label>
+								<label>Type an interval where a root is localized.</label>
 								<input type="text" id="interval_input"></input>
-								<a  id="interval_help" href="#" class=" icon icon-question-sign" rel="popover" data-content="Введите интервал в формате [a,b]. Например: [0.1, 10]." data-original-title="Подсказка"></a>
-								<label class="error">Неправильный формат.</label>
+								<a  id="interval_help" href="#" class=" icon icon-question-sign" rel="popover" data-content="An interval must be of the following format: [a,b]. E.g.: [-0.1, 10]." data-original-title="Help"></a>
+								<label class="error">Wrong format.</label>
 							<!--/div-->
                     	</div>
 					</div>
@@ -64,8 +74,28 @@
 					</div>
                     <br>
 	                <div class="accordion-group">
-	                	<button class="btn btn-primary btn-large" id="solve_button" type='button'>Решить »</button>	                    
+	                	<button class="btn btn-primary btn-large" id="solve_button" type='button'>Solve »</button>	                    
 	                </div>
+				</div>
+				<div id='loading' style="display: none;">
+				    <div id="circularG">
+				        <div id="circularG_1" class="circularG">
+				        </div>
+				        <div id="circularG_2" class="circularG">
+				        </div>
+				        <div id="circularG_3" class="circularG">
+				        </div>
+				        <div id="circularG_4" class="circularG">
+				        </div>
+				        <div id="circularG_5" class="circularG">
+				        </div>
+				        <div id="circularG_6" class="circularG">
+				        </div>
+				        <div id="circularG_7" class="circularG">
+				        </div>
+				        <div id="circularG_8" class="circularG">
+				        </div>
+				    </div>
 				</div>
 
 			</form>

@@ -9,20 +9,20 @@
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit"  id="main-hero-unit">
         <div id="bisection">
-	        <h3>Метод бисекции</h3>
-	        <p>Если корень локализован на отрезке [a,b] и f(a)f(b) < 0, то наиболее простым способом приближенного вычисления такого корня является метод бисекции. При этом данный метод отличается высокой надежностью: в случае непрерывной функции f он всегда сходится к одному из корней уравнения, расположенных на [a,b].</p>
+	        <h3>Bisection Method</h3>
+	        <p>If a root is localized on an intreval [a,b] and f(a)f(b) < 0, then bisection method is the easiest way of approximate root calculation. What is more the method is highly reliable: if the function is continuous it converges to one of the roots from the given interval.</p>
 	        <%= image_tag "/images/graph.png" %>
         </div>
         <div id="secant">
-	        <h3>Метод секущих</h3>
-	        <p>Пусть имеется два приближения к корню x<sub>k</sub> и x<sub>k-1</sub>. Составим уравнение секущей для функции f по этим точкам:</p>
+	        <h3>Secant Line Method</h3>
+	        <p>Let x<sub>k</sub> and x<sub>k-1</sub> be approximations of a root. Lets' work out an equation of the secant line containing these two points:</p>
 	        <div>
 	        	<%= image_tag "/images/secant_help1.png" %>
 	        </div>
 	        <%= image_tag "/images/graph2.png" %>
-	        <p>Положим x<sub>k+1</sub> равным корню уравнения y(x)=0:</p>
+	        <p>Let x<sub>k+1</sub> be a root of equation y(x)=0:</p>
 	        <img src="/images/secant_main.png">
-	        <p> В качестве начальных приближений можно брать концы отрезка, на котором локализован корень.</p>
+	        <p> As initial approximation endpoints of the interval can be taken.</p>
         </div>
       </div>
 

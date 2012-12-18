@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag "/assets/bootstrap/css/bootstrap-responsive.css"%>
 	<%= javascript_include_tag "application" %>
   <%= javascript_include_tag "/assets/bootstrap/js/bootstrap.js" %>
+  <%= javascript_include_tag "/assets/shared.js" %>
   <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-alert.js" %>
   <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-modal.js" %>
   <%= javascript_include_tag "/assets/bootstrap/js/bootstrap-dropdown.js" %>
@@ -41,10 +42,10 @@
           <a class="brand" href="/home/index.html#">nonLinear</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="/home/index.html#">Главная</a></li>
-              <li><a href="/non_linear/solve">Вычисления</a></li>
-              <li><a href="/non_linear/help">Теоретическая справка </a></li>
-              <li><a href="/home/about">О проекте</a></li>
+              <li id="index"><a href="/home/index.html#">Home</a></li>
+              <li id="solve"><a href="/non_linear/solve">Calculations</a></li>
+              <li id="help"><a href="/non_linear/help">Theoretical help</a></li>
+              <li id="about"><a href="/home/about">About</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

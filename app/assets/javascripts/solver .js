@@ -68,7 +68,7 @@ $(document).ready(function(){
 				}	
 	            $('#solution').text(data.solution);
 	            $('#mask').fadeOut(300 , function() {
-			            $('#mask').hide();
+			            $('#mask').remove();
 			        });
 		        },
 		        error: function(XMLHttpRequest, textStatus, errorThrown){
@@ -79,7 +79,7 @@ $(document).ready(function(){
 		            $('#loading').hide();
 		            $('#loading').fadeOut(300);
 		            $('#mask').fadeOut(300 , function() {
-			            $('#mask').hide();
+			            $('#mask').remove();
 			        });
 		        }
 			})

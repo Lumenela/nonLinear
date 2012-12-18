@@ -3,4 +3,4 @@
 +TODO: write guide
 +TODO: fix :active on menu bar
 +TODO: make highlight of solution blue
-+TODO: ajax loader
+TODO: ajax loader
