@@ -17,16 +17,22 @@ $(document).ready(function(){
 
 	$('#interval_input').focusout(function(){
 		var re = new RegExp(/\[( *)?-?\d+(\.\d+)?( *)?,( *)?-?\d+(\.\d+)?( *)?\]+/);
-		var lower_border_input = $('#interval_input').val().match(/-?\d+(\.\d+)?/g)[0];
-		var upper_border_input = $('#interval_input').val().match(/-?\d+(\.\d+)?/g)[1];
-		if($(this).val().match(re) && lower_border_input < upper_border_input)
+		
+		if($(this).val().match(re) != null)
 		{
-			$('#interval label.error').hide();
-			$('#interval').removeClass('error');
+			var lower_border_input = $('#interval_input').val().match(/-?\d+(\.\d+)?/g)[0];
+			var upper_border_input = $('#interval_input').val().match(/-?\d+(\.\d+)?/g)[1];
+			if(lower_border_input < upper_border_input)
+			{
+				$('#interval label.error').hide();
+				$('#interval').removeClass('error');
+			}
+			else{
+				showIntervalError();
+			}
 		}
 		else{
-			$('#interval label.error').show();
-			$('#interval').addClass('error');
+			showIntervalError();
 		}
 
 	})
@@ -98,3 +104,8 @@ $(document).ready(function(){
 		var value=$('textarea').val();
 	}
 })
+
+function showIntervalError(){
+	$('#interval label.error').show();
+	$('#interval').addClass('error');	
+}
